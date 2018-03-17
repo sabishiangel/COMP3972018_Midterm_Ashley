@@ -25,6 +25,7 @@ var scenes;
         PlayScene.prototype.Start = function () {
             this._ocean = new objects.Ocean();
             this._plane = new objects.Plane();
+            managers.Game.plane = this._plane;
             this._coin = new objects.Coin();
             this._island = new objects.Island();
             // instantiate the cloud array
@@ -75,6 +76,7 @@ var scenes;
             this.addChild(this._coin);
             // add the plane to the scene
             this.addChild(this._plane);
+            this.addChild(this._plane.planeFlash); // add the plane flashing effect
             // add clouds to the scene
             this._clouds.forEach(function (cloud) {
                 _this.addChild(cloud);

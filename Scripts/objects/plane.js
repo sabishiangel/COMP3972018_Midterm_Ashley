@@ -12,8 +12,6 @@ var objects;
 (function (objects) {
     var Plane = /** @class */ (function (_super) {
         __extends(Plane, _super);
-        // private instance variables
-        // public properties
         // Constructor
         function Plane() {
             var _this = _super.call(this, "plane") || this;
@@ -21,9 +19,18 @@ var objects;
             return _this;
         }
         // private methods
+        Plane.prototype._animationEnded = function () {
+            if (this.alpha == 0) {
+                this.alpha = 1;
+                this.planeFlash.alpha = 0;
+            }
+        };
         // public methods
         // Initializes variables and creates new objects
         Plane.prototype.Start = function () {
+            this.planeFlash = new objects.PlaneFlash();
+            this.planeFlash.alpha = 1;
+            this.planeFlash.on("animationend", this._animationEnded.bind(this), false);
             this.x = 320;
             this.y = 430;
         };
@@ -46,6 +53,8 @@ var objects;
             if (managers.Game.keyboardManager.moveRight) {
                 this.x += 5;
             }
+            this.planeFlash.x = this.x;
+            this.planeFlash.y = this.y;
         };
         // check to see if some boundary has been passed
         Plane.prototype.CheckBounds = function () {
