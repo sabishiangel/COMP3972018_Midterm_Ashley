@@ -65,7 +65,7 @@
     {id: "ocean", src:"./Assets/images/ocean.gif"},
     {id: "engine", src:"./Assets/audio/engine.ogg"},
     {id: "thunder", src:"./Assets/audio/thunder.ogg"},
-    {id: "yay", src:"./Assets/audio/yay.ogg"}
+    {id: "coin", src:"./Assets/audio/coin.wav"}
   ];
 
   // preloads assets

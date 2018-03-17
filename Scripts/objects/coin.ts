@@ -18,7 +18,13 @@ module objects {
     }
 
     public Update(): void {
+      this.CheckBounds();
+    }
 
+    public CheckBounds():void {
+      if(this.y > (480 + this.height)) {
+        this.alpha = 1;
+      }
     }
   }
 }
