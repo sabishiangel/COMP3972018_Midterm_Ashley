@@ -57,7 +57,8 @@
         { id: "ocean", src: "./Assets/images/ocean.gif" },
         { id: "engine", src: "./Assets/audio/engine.ogg" },
         { id: "thunder", src: "./Assets/audio/thunder.ogg" },
-        { id: "coin", src: "./Assets/audio/coin.wav" }
+        { id: "coin", src: "./Assets/audio/coin.wav" },
+        { id: "life", src: "./Assets/audio/life.wav" }
     ];
     // preloads assets
     function Init() {
