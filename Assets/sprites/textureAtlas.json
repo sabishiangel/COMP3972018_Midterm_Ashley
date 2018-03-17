@@ -1,0 +1,33 @@
+{
+
+"images": [
+    "textureAtlas.png"
+],
+
+"framerate": 20,
+"frames": [
+    [2, 2, 226, 178, 0, 0, 0],
+    [2, 182, 62, 62, 0, 0, 0],
+    [66, 182, 62, 51, 0, -3, -9],
+    [130, 182, 62, 51, 0, -3, -9],
+    [2, 246, 62, 51, 0, -3, -9],
+    [2, 299, 200, 60, 0, 0, 0],
+    [2, 361, 200, 60, 0, 0, 0]
+],
+
+"animations": {
+    "cloud": { "frames": [0] },
+    "island": { "frames": [1] },
+    "plane1": { "frames": [2] },
+    "plane2": { "frames": [3] },
+    "plane3": { "frames": [4] },
+    "restartButton": { "frames": [5] },
+    "startButton": { "frames": [6] }
+},
+
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:fc26f64d3917bd5085841f05b28584fa:3cd021a6abe7dad74670f4b8947472a3:2b5604bc88faefd55ddac16e9bce1532$",
+        "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
+]
+
+}
