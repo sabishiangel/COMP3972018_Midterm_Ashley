@@ -12,6 +12,7 @@
 
 
 /// <reference path="../../Scripts/objects/gameobject.ts"/>
+/// <reference path="../../Scripts/objects/explosion.ts"/>
 
 // Managers
 /// <reference path="../../Scripts/managers/keyboard.ts"/>

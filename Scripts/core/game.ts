@@ -56,7 +56,7 @@
         "frames": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         "speed": 0.33
       },
-      "explosion1": {
+      "explosion": {
         "frames": [11, 12, 13, 14, 15, 16, 17],
         "speed": 0.16
       },
@@ -139,6 +139,7 @@
     }
 
     currentState = managers.Game.currentScene;
+    managers.Game.currentSceneObject = currentScene;
     stage.addChild(currentScene);
   }
 
