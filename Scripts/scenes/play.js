@@ -25,6 +25,7 @@ var scenes;
         PlayScene.prototype.Start = function () {
             this._ocean = new objects.Ocean();
             this._plane = new objects.Plane();
+            this._coin = new objects.Coin();
             this._island = new objects.Island();
             // instantiate the cloud array
             this._clouds = new Array();
@@ -46,6 +47,9 @@ var scenes;
             var _this = this;
             this._ocean.Update();
             this._plane.Update();
+            this._coin.x = this._island.x;
+            this._coin.y = this._island.y;
+            this._coin.Update();
             this._island.Update();
             // check collision between plane and island
             managers.Collision.Check(this._plane, this._island);
@@ -67,6 +71,8 @@ var scenes;
             this.addChild(this._ocean);
             // add the island to the scene
             this.addChild(this._island);
+            // add the coin to the scene
+            this.addChild(this._coin);
             // add the plane to the scene
             this.addChild(this._plane);
             // add clouds to the scene
