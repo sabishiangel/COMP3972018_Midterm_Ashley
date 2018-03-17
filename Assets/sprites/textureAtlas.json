@@ -17,12 +17,19 @@
     [48, 182, 44, 40, 0, 0, 0],
     [94, 182, 44, 40, 0, 0, 0],
     [140, 182, 44, 40, 0, 0, 0],
-    [186, 182, 62, 63, 0, 0, 0],
-    [250, 182, 65, 65, 0, 0, 0],
-    [317, 182, 65, 65, 0, 0, 0],
-    [384, 182, 65, 65, 0, 0, 0],
-    [2, 249, 200, 60, 0, 0, 0],
-    [204, 249, 200, 60, 0, 0, 0]
+    [186, 182, 65, 65, 0, 0, 0],
+    [253, 182, 65, 65, 0, 0, 0],
+    [320, 182, 65, 65, 0, 0, 0],
+    [387, 182, 65, 65, 0, 0, 0],
+    [2, 249, 65, 65, 0, 0, 0],
+    [69, 249, 65, 65, 0, 0, 0],
+    [136, 249, 65, 65, 0, 0, 0],
+    [203, 249, 62, 63, 0, 0, 0],
+    [267, 249, 65, 65, 0, 0, 0],
+    [334, 249, 65, 65, 0, 0, 0],
+    [401, 249, 65, 65, 0, 0, 0],
+    [2, 316, 200, 60, 0, 0, 0],
+    [204, 316, 200, 60, 0, 0, 0]
 ],
 
 "animations": {
@@ -30,18 +37,22 @@
     "coin": {
       "frames": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       "speed": 0.33
-      },
-    "island": { "frames": [11] },
+    },
+    "explosion1": {
+      "frames": [11, 12, 13, 14, 15, 16, 17],
+      "speed": 0.16
+    },
+    "island": { "frames": [18] },
     "plane": {
-      "frames": [12, 13, 14],
+      "frames": [19, 20, 21],
       "speed": 0.5
     },
-    "restartButton": { "frames": [15] },
-    "startButton": { "frames": [16] }
+    "restartButton": { "frames": [22] },
+    "startButton": { "frames": [23] }
 },
 
 "texturepacker": [
-        "SmartUpdateHash: $TexturePacker:SmartUpdate:0e8317f720ab00103af0ecd4fb8bd1eb:f9ac86df4e943a276bdad6bc0b80ea58:2b5604bc88faefd55ddac16e9bce1532$",
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:7b63eab497526be4937be9532834bead:bb9a7cbd42caf1764d78c05efe991443:2b5604bc88faefd55ddac16e9bce1532$",
         "Created with TexturePacker (https://www.codeandweb.com/texturepacker) for EaselJS"
 ]
 

@@ -1,11 +1,11 @@
 /// <reference path="_references.ts"/>
 
 // IIFE - Immediately Invoked Function Expression
-(function(){
+(function () {
 
   // Game Variables
   let canvas = document.getElementById("canvas");
-  let stage:createjs.Stage;
+  let stage: createjs.Stage;
   let helloLabel: objects.Label;
   let clickMeButton: objects.Button;
   let assetManager: createjs.LoadQueue;
@@ -19,8 +19,8 @@
   textureAtlasData = {
 
     "images": [
-        ""
-        //"./Assets/sprites/textureAtlas.png"
+      ""
+      //"./Assets/sprites/textureAtlas.png"
     ],
 
     "frames": [
@@ -35,42 +35,53 @@
       [48, 182, 44, 40, 0, 0, 0],
       [94, 182, 44, 40, 0, 0, 0],
       [140, 182, 44, 40, 0, 0, 0],
-      [186, 182, 62, 63, 0, 0, 0],
-      [250, 182, 65, 65, 0, 0, 0],
-      [317, 182, 65, 65, 0, 0, 0],
-      [384, 182, 65, 65, 0, 0, 0],
-      [2, 249, 200, 60, 0, 0, 0],
-      [204, 249, 200, 60, 0, 0, 0]
-  ],
+      [186, 182, 65, 65, 0, 0, 0],
+      [253, 182, 65, 65, 0, 0, 0],
+      [320, 182, 65, 65, 0, 0, 0],
+      [387, 182, 65, 65, 0, 0, 0],
+      [2, 249, 65, 65, 0, 0, 0],
+      [69, 249, 65, 65, 0, 0, 0],
+      [136, 249, 65, 65, 0, 0, 0],
+      [203, 249, 62, 63, 0, 0, 0],
+      [267, 249, 65, 65, 0, 0, 0],
+      [334, 249, 65, 65, 0, 0, 0],
+      [401, 249, 65, 65, 0, 0, 0],
+      [2, 316, 200, 60, 0, 0, 0],
+      [204, 316, 200, 60, 0, 0, 0]
+    ],
 
-  "animations": {
-    "cloud": { "frames": [0] },
-    "coin": {
-      "frames": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      "speed": 0.33
+    "animations": {
+      "cloud": { "frames": [0] },
+      "coin": {
+        "frames": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "speed": 0.33
       },
-    "island": { "frames": [11] },
-    "plane": {
-      "frames": [12, 13, 14],
-      "speed": 0.5
-    },
-    "restartButton": { "frames": [15] },
-    "startButton": { "frames": [16] }
-}
+      "explosion1": {
+        "frames": [11, 12, 13, 14, 15, 16, 17],
+        "speed": 0.16
+      },
+      "island": { "frames": [18] },
+      "plane": {
+        "frames": [19, 20, 21],
+        "speed": 0.5
+      },
+      "restartButton": { "frames": [22] },
+      "startButton": { "frames": [23] }
+    }
 
-    };
+  };
 
   assetManifest = [
-    {id: "textureAtlas", src:"./Assets/sprites/textureAtlas.png"},
-    {id: "ocean", src:"./Assets/images/ocean.gif"},
-    {id: "engine", src:"./Assets/audio/engine.ogg"},
-    {id: "thunder", src:"./Assets/audio/thunder.ogg"},
-    {id: "coin", src:"./Assets/audio/coin.wav"},
-    {id: "life", src:"./Assets/audio/life.wav"}
+    { id: "textureAtlas", src: "./Assets/sprites/textureAtlas.png" },
+    { id: "ocean", src: "./Assets/images/ocean.gif" },
+    { id: "engine", src: "./Assets/audio/engine.ogg" },
+    { id: "thunder", src: "./Assets/audio/thunder.ogg" },
+    { id: "coin", src: "./Assets/audio/coin.wav" },
+    { id: "life", src: "./Assets/audio/life.wav" }
   ];
 
   // preloads assets
-  function Init():void {
+  function Init(): void {
     console.log("Initialization Started...");
     assetManager = new createjs.LoadQueue(); // creates the assetManager object
     assetManager.installPlugin(createjs.Sound); // asset manager can also load sounds
@@ -78,9 +89,9 @@
     assetManager.on("complete", Start, this);
   }
 
-  function Start():void {
+  function Start(): void {
     console.log("Starting Application...")
-    textureAtlasData.images = [ assetManager.getResult("textureAtlas") ];
+    textureAtlasData.images = [assetManager.getResult("textureAtlas")];
     textureAtlas = new createjs.SpriteSheet(textureAtlasData);
 
     stage = new createjs.Stage(canvas);
@@ -100,10 +111,10 @@
     Main();
   }
 
-  function Update():void {
+  function Update(): void {
     // if the scene that is playing returns another current scene
     // then call Main again and switch the scene
-    if(currentState!= managers.Game.currentScene) {
+    if (currentState != managers.Game.currentScene) {
       Main();
     }
 
@@ -112,19 +123,19 @@
     stage.update(); // redraws the stage
   }
 
-  function Main():void {
+  function Main(): void {
     stage.removeAllChildren();
 
-    switch(managers.Game.currentScene) {
+    switch (managers.Game.currentScene) {
       case config.Scene.START:
         currentScene = new scenes.StartScene();
-      break;
+        break;
       case config.Scene.PLAY:
         currentScene = new scenes.PlayScene();
-      break;
+        break;
       case config.Scene.OVER:
         currentScene = new scenes.OverScene();
-      break;
+        break;
     }
 
     currentState = managers.Game.currentScene;
