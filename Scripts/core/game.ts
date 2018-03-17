@@ -46,9 +46,11 @@
       [267, 249, 65, 65, 0, 0, 0],
       [334, 249, 65, 65, 0, 0, 0],
       [401, 249, 65, 65, 0, 0, 0],
-      [2, 316, 200, 60, 0, 0, 0],
-      [204, 316, 200, 60, 0, 0, 0]
-    ],
+      [2, 316, 65, 65, 0, 0, 0],
+      [69, 316, 65, 65, 0, 0, 0],
+      [136, 316, 200, 60, 0, 0, 0],
+      [2, 383, 200, 60, 0, 0, 0]
+  ],
 
     "animations": {
       "cloud": { "frames": [0] },
@@ -65,8 +67,12 @@
         "frames": [19, 20, 21],
         "speed": 0.5
       },
-      "restartButton": { "frames": [22] },
-      "startButton": { "frames": [23] }
+      "planeflash": {
+        "frames": [22, 23, 22, 23, 22, 23],
+        "speed": 0.08
+      },
+      "restartButton": { "frames": [24] },
+      "startButton": { "frames": [25] }
     }
 
   };
@@ -75,9 +81,9 @@
     { id: "textureAtlas", src: "./Assets/sprites/textureAtlas.png" },
     { id: "ocean", src: "./Assets/images/ocean.gif" },
     { id: "engine", src: "./Assets/audio/engine.ogg" },
-    { id: "thunder", src: "./Assets/audio/thunder.ogg" },
     { id: "coin", src: "./Assets/audio/coin.wav" },
-    { id: "life", src: "./Assets/audio/life.wav" }
+    { id: "life", src: "./Assets/audio/life.wav" },
+    { id: "explosion", src: "./Assets/audio/explosion.mp3" }
   ];
 
   // preloads assets
