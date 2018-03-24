@@ -40,6 +40,10 @@ var objects;
                 this.y = Math.floor((Math.random() * ((480) - this.height)) + this.halfHeight);
                 this.x = this.width + 480;
             }
+            if (managers.Game.currentScene == config.Scene.LEVEL3) {
+                this.y = Math.floor((Math.random() * ((480) - this.height)) + this.halfHeight);
+                this.x = this.width;
+            }
         };
         // move the object to some new location
         Island.prototype.Move = function () {
@@ -48,6 +52,9 @@ var objects;
             }
             if (managers.Game.currentScene == config.Scene.LEVEL2) {
                 this.x = this.x - this._dy;
+            }
+            if (managers.Game.currentScene == config.Scene.LEVEL3) {
+                this.x += this._dy;
             }
         };
         // check to see if some boundary has been passed
@@ -58,6 +65,11 @@ var objects;
             }
             if (this.x <= this.width - 480) {
                 this.Reset();
+            }
+            if (managers.Game.currentScene == config.Scene.LEVEL3) {
+                if (this.x >= this.width + 640) {
+                    this.Reset();
+                }
             }
         };
         return Island;
