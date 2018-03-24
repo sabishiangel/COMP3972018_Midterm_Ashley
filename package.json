@@ -1,30 +1,34 @@
 {
-  "name": "comp397-w2018-mailpilotdemo-b",
+  "name": "comp397-w2018-midterm",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "demo": "lite-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CentennialCollege/COMP397-W2018-MailPilotDemo-B.git"
+    "url": "git+https://github.com/sabishiangel/COMP3972018_Midterm_Ashley.git"
   },
-  "author": "Tom Tsiliopoulos <tsiliopoulos@hotmail.com>",
+  "author": "Ashley Tjon-Hing <ashley.tjonhing@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CentennialCollege/COMP397-W2018-MailPilotDemo-B/issues"
+    "url": "https://github.com/sabishiangel/COMP3972018_Midterm_Ashley/issues"
   },
-  "homepage": "https://github.com/CentennialCollege/COMP397-W2018-MailPilotDemo-B#readme",
+  "homepage": "https://github.com/sabishiangel/COMP3972018_Midterm_Ashley#readme",
   "devDependencies": {
-    "@types/easeljs": "^1.0.0"
+    "@types/easeljs": "^1.0.0",
+    "lite-server": "^2.3.0"
   },
   "dependencies": {
     "@types/preloadjs": "^0.6.32",
     "@types/soundjs": "^0.6.27",
     "@types/tweenjs": "^0.6.27",
     "easeljs": "^1.0.2",
+    "npm": "^5.8.0",
     "preloadjs": "^1.0.1",
+    "save-dev": "^2.0.0",
     "soundjs": "^1.0.1",
     "tweenjs": "^1.0.2"
   }

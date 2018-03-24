@@ -10,11 +10,11 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var scenes;
 (function (scenes) {
-    var PlayScene = /** @class */ (function (_super) {
-        __extends(PlayScene, _super);
+    var Level2Scene = /** @class */ (function (_super) {
+        __extends(Level2Scene, _super);
         // Public Properties
         // Constructor
-        function PlayScene() {
+        function Level2Scene() {
             var _this = _super.call(this) || this;
             _this.Start();
             return _this;
@@ -22,7 +22,7 @@ var scenes;
         // Private Mathods
         // Public Methods
         // Initialize Game Variables and objects
-        PlayScene.prototype.Start = function () {
+        Level2Scene.prototype.Start = function () {
             this._ocean = new objects.Ocean();
             this._plane = new objects.Plane();
             managers.Game.plane = this._plane;
@@ -30,7 +30,7 @@ var scenes;
             this._island = new objects.Island();
             // instantiate the cloud array
             this._clouds = new Array();
-            this._cloudNum = 1;
+            this._cloudNum = 3;
             // loop and add each cloud to the array
             for (var count = 0; count < this._cloudNum; count++) {
                 this._clouds[count] = new objects.Cloud();
@@ -44,7 +44,7 @@ var scenes;
             this.Main();
         };
         // triggered every frame
-        PlayScene.prototype.Update = function () {
+        Level2Scene.prototype.Update = function () {
             var _this = this;
             this._ocean.Update();
             this._plane.Update();
@@ -66,7 +66,7 @@ var scenes;
             }
         };
         // This is where the fun happens
-        PlayScene.prototype.Main = function () {
+        Level2Scene.prototype.Main = function () {
             var _this = this;
             // add the ocean to the scene
             this.addChild(this._ocean);
@@ -85,8 +85,8 @@ var scenes;
             this.addChild(this._scoreBoard.LivesLabel);
             this.addChild(this._scoreBoard.ScoreLabel);
         };
-        return PlayScene;
+        return Level2Scene;
     }(objects.Scene));
-    scenes.PlayScene = PlayScene;
+    scenes.Level2Scene = Level2Scene;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=play.js.map
+//# sourceMappingURL=Level2.js.map

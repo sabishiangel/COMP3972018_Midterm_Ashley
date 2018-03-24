@@ -22,11 +22,19 @@ var objects;
         // private methods
         // reset the objects location to some value
         Ocean.prototype._reset = function () {
+            //if(config.Scene.LEVEL2){
+            //  this.x = -960;
+            //}else{
             this.y = -960;
+            //}
         };
         // move the object to some new location
         Ocean.prototype._move = function () {
+            //if(config.Scene.LEVEL2){
+            //this.x += this._dy;
+            //}else{
             this.y += this._dy;
+            //}
         };
         // check to see if some boundary has been passed
         Ocean.prototype._checkBounds = function () {
