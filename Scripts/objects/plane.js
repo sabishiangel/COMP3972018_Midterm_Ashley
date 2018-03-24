@@ -31,8 +31,15 @@ var objects;
             this.planeFlash = new objects.PlaneFlash();
             this.planeFlash.alpha = 1;
             this.planeFlash.on("animationend", this._animationEnded.bind(this), false);
-            this.x = 320;
-            this.y = 430;
+            if (managers.Game.currentScene == config.Scene.PLAY) {
+                this.x = 320;
+                this.y = 430;
+            }
+            else if (managers.Game.currentScene == config.Scene.LEVEL2) {
+                this.x = 50;
+                this.y = 230;
+                this.rotation = 90;
+            }
         };
         // updates the game object every frame
         Plane.prototype.Update = function () {
@@ -49,6 +56,9 @@ var objects;
             // keyboard controls
             this.planeFlash.x = this.x;
             this.planeFlash.y = this.y;
+            if (managers.Game.currentScene == config.Scene.LEVEL2) {
+                this.planeFlash.rotation = 90;
+            }
             if (managers.Game.currentScene == config.Scene.PLAY) {
                 if (managers.Game.keyboardManager.moveLeft) {
                     this.x -= 5;
