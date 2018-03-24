@@ -41,6 +41,7 @@ var scenes;
             // create the scoreboard UI for the Scene
             this._scoreBoard = new managers.ScoreBoard();
             managers.Game.scoreBoard = this._scoreBoard;
+            managers.Game.scoreBoard.Score += 500;
             this.Main();
         };
         // triggered every frame
