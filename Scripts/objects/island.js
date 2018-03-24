@@ -37,11 +37,11 @@ var objects;
             this.x = Math.floor((Math.random() * (640 - this.width)) + this.halfWidth);
             this.y = -this.height;
             if (managers.Game.currentScene == config.Scene.LEVEL2) {
-                this.y = Math.floor((Math.random() * ((480) - this.height)) + this.halfHeight);
+                this.y = Math.floor((Math.random() * ((640) - this.height)) + this.halfHeight);
                 this.x = this.width + 480;
             }
             if (managers.Game.currentScene == config.Scene.LEVEL3) {
-                this.y = Math.floor((Math.random() * ((480) - this.height)) + this.halfHeight);
+                this.y = Math.floor((Math.random() * ((640) - this.height)) + this.halfHeight);
                 this.x = this.width;
             }
         };

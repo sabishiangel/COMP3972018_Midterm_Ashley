@@ -22,12 +22,12 @@ var managers;
                                     createjs.Sound.play("life");
                                 }
                                 //lvl2
-                                if (managers.Game.scoreBoard.Score == 100) {
+                                if (managers.Game.scoreBoard.Score == 500) {
                                     managers.Game.currentScene = config.Scene.LEVEL2;
                                     createjs.Sound.play("nextLvl");
                                 }
                                 //lvl3
-                                if (managers.Game.scoreBoard.Score == 600) {
+                                if (managers.Game.scoreBoard.Score == 1000) {
                                     managers.Game.currentScene = config.Scene.LEVEL3;
                                     createjs.Sound.play("nextLvl");
                                 }
