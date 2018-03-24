@@ -75,7 +75,8 @@
         { id: "engine", src: "./Assets/audio/engine.ogg" },
         { id: "coin", src: "./Assets/audio/coin.wav" },
         { id: "life", src: "./Assets/audio/life.wav" },
-        { id: "explosion", src: "./Assets/audio/explosion.mp3" }
+        { id: "explosion", src: "./Assets/audio/explosion.mp3" },
+        { id: "nextLvl", src: "./Assets/audio/yay.ogg" }
     ];
     // preloads assets
     function Init() {
@@ -119,6 +120,9 @@
                 break;
             case config.Scene.PLAY:
                 currentScene = new scenes.PlayScene();
+                break;
+            case config.Scene.LEVEL2:
+                currentScene = new scenes.Level2Scene();
                 break;
             case config.Scene.OVER:
                 currentScene = new scenes.OverScene();
