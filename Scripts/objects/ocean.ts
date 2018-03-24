@@ -8,9 +8,9 @@ module objects {
     // Constructor
     constructor() {
       super(managers.Game.assetManager.getResult("ocean"));
-      // if(managers.Game.currentScene == config.Scene.LEVEL2){
-      //   this.rotation = -90;
-      //   }
+      if(managers.Game.currentScene == config.Scene.LEVEL2){
+        this.rotation = -270;
+        }
       this.Start();
     }
 
@@ -19,18 +19,18 @@ module objects {
     // reset the objects location to some value
     private _reset():void {
      
-      // if(managers.Game.currentScene == config.Scene.LEVEL2){
-      //  this.x = -600;
-      // }else{
+      if(managers.Game.currentScene == config.Scene.LEVEL2){
+       this.x = 960;
+      }else{
         this.y = -960;
-      // }
+      }
     }
 
     // move the object to some new location
     private _move():void {
 
       if(managers.Game.currentScene == config.Scene.LEVEL2){
-        this.x += this._dy;
+        this.x = this._dy-this._dy;
       }else{
         this.y += this._dy;
       }
@@ -44,9 +44,9 @@ module objects {
         this._reset();
       }
       if(managers.Game.currentScene == config.Scene.LEVEL2){
-      if(this.x >= 480) {
-        this._reset();
-      }
+      // if(this.x <= 0) {
+      //   this._reset();
+      // }
     }
     }
 

@@ -36,15 +36,27 @@ var objects;
         Island.prototype.Reset = function () {
             this.x = Math.floor((Math.random() * (640 - this.width)) + this.halfWidth);
             this.y = -this.height;
+            if (managers.Game.currentScene == config.Scene.LEVEL2) {
+                this.y = Math.floor((Math.random() * ((480) - this.height)) + this.halfHeight);
+                this.x = this.width + 480;
+            }
         };
         // move the object to some new location
         Island.prototype.Move = function () {
-            this.y += this._dy;
+            if (managers.Game.currentScene == config.Scene.PLAY) {
+                this.y += this._dy;
+            }
+            if (managers.Game.currentScene == config.Scene.LEVEL2) {
+                this.x = this.x - this._dy;
+            }
         };
         // check to see if some boundary has been passed
         Island.prototype.CheckBounds = function () {
             // check lower bounds
             if (this.y >= 480 + this.height) {
+                this.Reset();
+            }
+            if (this.x <= this.width - 480) {
                 this.Reset();
             }
         };

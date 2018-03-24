@@ -22,9 +22,16 @@ module managers {
                   managers.Game.scoreBoard.Lives += 1;
                   createjs.Sound.play("life");
                 }
-
-                if(managers.Game.scoreBoard.Score == 200) {
+                
+                //lvl2
+                if(managers.Game.scoreBoard.Score == 100) {
                   managers.Game.currentScene = config.Scene.LEVEL2;
+                  createjs.Sound.play("nextLvl");
+                }
+
+                //lvl3
+                if(managers.Game.scoreBoard.Score == 600) {
+                  managers.Game.currentScene = config.Scene.LEVEL3;
                   createjs.Sound.play("nextLvl");
                 }
 

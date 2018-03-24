@@ -16,25 +16,26 @@ var objects;
         // Constructor
         function Ocean() {
             var _this = _super.call(this, managers.Game.assetManager.getResult("ocean")) || this;
-            // if(managers.Game.currentScene == config.Scene.LEVEL2){
-            //   this.rotation = -90;
-            //   }
+            if (managers.Game.currentScene == config.Scene.LEVEL2) {
+                _this.rotation = -270;
+            }
             _this.Start();
             return _this;
         }
         // private methods
         // reset the objects location to some value
         Ocean.prototype._reset = function () {
-            // if(managers.Game.currentScene == config.Scene.LEVEL2){
-            //  this.x = -600;
-            // }else{
-            this.y = -960;
-            // }
+            if (managers.Game.currentScene == config.Scene.LEVEL2) {
+                this.x = 960;
+            }
+            else {
+                this.y = -960;
+            }
         };
         // move the object to some new location
         Ocean.prototype._move = function () {
             if (managers.Game.currentScene == config.Scene.LEVEL2) {
-                this.x += this._dy;
+                this.x = this._dy - this._dy;
             }
             else {
                 this.y += this._dy;
@@ -46,9 +47,9 @@ var objects;
                 this._reset();
             }
             if (managers.Game.currentScene == config.Scene.LEVEL2) {
-                if (this.x >= 480) {
-                    this._reset();
-                }
+                // if(this.x <= 0) {
+                //   this._reset();
+                // }
             }
         };
         // public methods

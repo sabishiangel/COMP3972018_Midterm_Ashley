@@ -38,7 +38,12 @@ module objects {
           this.x = this.width + 480;
           this._dy = Math.floor((Math.random() * 4) - 2);
           this._dx = Math.floor((Math.random() * 5) - 5);
-          }
+          }else if(managers.Game.currentScene == config.Scene.LEVEL3){
+            this.y = Math.floor((Math.random() * (480 - this.height)) + this.halfHeight);
+            this.x = this.width;
+            this._dy = Math.floor((Math.random() * 4) - 2);
+            this._dx = Math.floor((Math.random() * 5) + 5);
+            }
 
     }
 
@@ -58,6 +63,12 @@ module objects {
       if(this.x <= this.width - 480) {
         this.Reset();
       }
+      if(managers.Game.currentScene == config.Scene.LEVEL3){
+      if(this.x >= this.width - 480) {
+        this.Reset();
+          
+      }
     }
+  }
   }
 }

@@ -37,6 +37,11 @@ module objects {
         this.y = 230;
         this.rotation = 90;
         }
+        else if(managers.Game.currentScene == config.Scene.LEVEL3){
+          this.x = 590;
+          this.y = 230;
+          this.rotation = 270;
+          }
 
 
     }
@@ -64,6 +69,10 @@ module objects {
      if(managers.Game.currentScene == config.Scene.LEVEL2){
       this.planeFlash.rotation = 90;
       }
+
+      if(managers.Game.currentScene == config.Scene.LEVEL3){
+        this.planeFlash.rotation = 270;
+        }
      
      if(managers.Game.currentScene == config.Scene.PLAY){
       if(managers.Game.keyboardManager.moveLeft) {
@@ -81,6 +90,14 @@ module objects {
             this.y += 5;
           }
       }
+      else if(managers.Game.currentScene == config.Scene.LEVEL3){
+        if(managers.Game.keyboardManager.moveForward) {
+          this.y -= 5;
+        }
+        if(managers.Game.keyboardManager.moveBackward) {
+          this.y += 5;
+        }
+    }
 
   
     }
