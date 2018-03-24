@@ -16,22 +16,21 @@ module objects {
     // reset the objects location to some value
     private _reset():void {
      
-      //if(config.Scene.LEVEL2){
-      //  this.x = -960;
-      //}else{
+      if(managers.Game.currentScene == config.Scene.LEVEL2){
+       this.x = -600;
+      }else{
         this.y = -960;
-      //}
+      }
     }
 
     // move the object to some new location
     private _move():void {
 
-      //if(config.Scene.LEVEL2){
-        
-        //this.x += this._dy;
-      //}else{
+      if(managers.Game.currentScene == config.Scene.LEVEL2){
+        this.x += this._dy;
+      }else{
         this.y += this._dy;
-      //}
+      }
 
     }
     
@@ -41,6 +40,11 @@ module objects {
       if(this.y >= 0) {
         this._reset();
       }
+      if(managers.Game.currentScene == config.Scene.LEVEL2){
+      if(this.x >= 0) {
+        this._reset();
+      }
+    }
     }
 
     // public methods

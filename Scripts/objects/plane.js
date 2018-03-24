@@ -47,14 +47,24 @@ var objects;
             // mouse controls
             // this.x = objects.Game.stage.mouseX;
             // keyboard controls
-            if (managers.Game.keyboardManager.moveLeft) {
-                this.x -= 5;
-            }
-            if (managers.Game.keyboardManager.moveRight) {
-                this.x += 5;
-            }
             this.planeFlash.x = this.x;
             this.planeFlash.y = this.y;
+            if (managers.Game.currentScene == config.Scene.PLAY) {
+                if (managers.Game.keyboardManager.moveLeft) {
+                    this.x -= 5;
+                }
+                if (managers.Game.keyboardManager.moveRight) {
+                    this.x += 5;
+                }
+            }
+            else if (managers.Game.currentScene == config.Scene.LEVEL2) {
+                if (managers.Game.keyboardManager.moveForward) {
+                    this.y -= 5;
+                }
+                if (managers.Game.keyboardManager.moveBackward) {
+                    this.y += 5;
+                }
+            }
         };
         // check to see if some boundary has been passed
         Plane.prototype.CheckBounds = function () {
